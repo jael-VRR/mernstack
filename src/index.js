@@ -1,7 +1,10 @@
 const express = require('express');
 const app =express();
 
-app.listen(5000, () => { 
-    console.log('server on port 5000');
+//Settings
+app.set('port',process.env.PORT || 3000)
+
+app.listen(app.get('port'), () => { 
+    console.log(`Server on port ${app.get('port')}`);
 });
 
