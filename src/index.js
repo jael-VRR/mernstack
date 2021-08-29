@@ -1,5 +1,7 @@
 const express = require('express');
 const morgan =require('morgan');
+const { dirname } = require('path');
+const path = require('path');
 const app =express();
 
 //Settings
@@ -13,3 +15,8 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 //Routes
+app.use('/api/tasks',require('./routes/taskRoutes'));
+
+//Static files
+console.log(__dirname);
+//app.use(express.static())
