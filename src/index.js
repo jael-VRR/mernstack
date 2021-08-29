@@ -10,3 +10,6 @@ app.listen(app.get('port'), () => {
 });
 //Middlewares
 app.use(morgan('dev'));
+app.use(express.json());
+
+//Routes
